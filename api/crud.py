@@ -30,9 +30,10 @@ def read_all() -> list[str]:
     con = get_connection()
     c = con.cursor()
     c.execute("SELECT url FROM shorts")
-    url = c.fetchall()
+    rows = c.fetchall()
+    urls = [row[0] for row in rows]
     con.close()
-    return url
+    return urls
 
 
 def read_short_random() -> str:
