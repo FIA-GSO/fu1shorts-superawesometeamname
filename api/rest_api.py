@@ -5,7 +5,7 @@ from .crud import create_short, read_short, read_all, read_short_random, delete_
 
 app = FastAPI()
 
-@app.post("/shorts/")
+@app.post("/shorts")
 def create_short_api(url: str):
     return create_short(url)
  
@@ -13,7 +13,7 @@ def create_short_api(url: str):
 def read_short_api(id: int):
     return read_short(id)
  
-@app.get("/shorts/")
+@app.get("/shorts")
 def read_all_api():
     return read_all()
  
